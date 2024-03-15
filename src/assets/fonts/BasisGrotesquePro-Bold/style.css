@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Basis Grotesque Pro';
+    src: local('Basis Grotesque Pro Bold'), local('Basis-Grotesque-Pro-Bold'),
+        url('BasisGrotesquePro-Bold.woff2') format('woff2'),
+        url('BasisGrotesquePro-Bold.woff') format('woff'),
+        url('BasisGrotesquePro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }

@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'BasisGrotesquePro-Regular', serif;
+  font-size: 14px;
+}
+
+@font-face {
+  font-family: 'BasisGrotesquePro-Bold';
+  font-weight: 800;
+  src: url(./assets/fonts/BasisGrotesquePro-Bold/BasisGrotesquePro-Bold.woff2) format('woff2'),
+  url(./assets/fonts/BasisGrotesquePro-Bold/BasisGrotesquePro-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'BasisGrotesquePro-Medium';
+  font-weight: 700;
+  src: url(./assets/fonts/BasisGrotesquePro-Medium/BasisGrotesquePro-Medium.woff2) format('woff2'),
+  url(./assets/fonts/BasisGrotesquePro-Medium/BasisGrotesquePro-Medium.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'BasisGrotesquePro-Regular';
+  font-weight: 400;
+  src: url(./assets/fonts/BasisGrotesquePro-Regular/BasisGrotesquePro-Regular.woff2) format('woff2'),
+  url(./assets/fonts/BasisGrotesquePro-Regular/BasisGrotesquePro-Regular.woff) format('woff');
+}
