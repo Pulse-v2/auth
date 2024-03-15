@@ -5,6 +5,8 @@ import './newPassword.scss';
 import axios from 'axios';
 import authService from '../services/authService';
 
+
+//It is possible to fully implement only having access to the mail and receiving all the necessary parameters
 const NewPassword = () => {
     const [credentials, setCredentials] = useState({password: '', password_confirm: '', token: '', secret: ''});
     const [passVisible, setPassVisible] = useState(false);
