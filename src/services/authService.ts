@@ -26,9 +26,9 @@ class AuthService {
     // refreshToken(refresh_token: string) {
     //     return axiosInstance.post('/refresh_token', { refresh_token });
     // }
-    // clearToken() {
-    //     return localStorage.removeItem('token')
-    // }
+    clearToken() {
+        return localStorage.removeItem('token')
+    }
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export

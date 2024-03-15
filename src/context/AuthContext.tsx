@@ -50,7 +50,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
     };
 
     const logout = () => {
-        // authService.clearToken(); // Clear the token from storage
+        authService.clearToken(); // Clear the token from storage
         setUser(null); // Reset user state
     };
 

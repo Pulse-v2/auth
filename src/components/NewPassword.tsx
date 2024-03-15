@@ -9,10 +9,10 @@ const NewPassword = () => {
     const [credentials, setCredentials] = useState({password: '', password_confirm: '', token: '', secret: ''});
     const [passVisible, setPassVisible] = useState(false);
     const [rePassVisible, setRePassVisible] = useState(false);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState('');
 
     const handleChange = (e: { target: { name: string; value: string; }; }) => {
-        setError(false);
+        setError('');
         setCredentials({
             ...credentials,
             [e.target.name]: e.target.value
@@ -23,8 +23,7 @@ const NewPassword = () => {
         e.preventDefault();
         const passPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^_&*])(?=.*[a-zA-Z]).{8,}$/;
         if (!passPattern.test(credentials.password) && credentials.password !== credentials.password_confirm) {
-            setError(true);
-            console.log('error pass');
+            setError('Password does not meet requirements');
             return;
         } else {
             try {
@@ -36,11 +35,10 @@ const NewPassword = () => {
                 await authService.setPassword(credentials);
             } catch (error) {
                 if (axios.isAxiosError(error)) {
-                    setError(true);
-                    const message = error.response?.data?.message || 'Unknown error';
-                    throw new Error('Authorization error: ' + message);
+                    const message = error.response?.data?.detail || error.response?.data?.detail[0].error || 'Unknown error';
+                    setError(message);
                 } else {
-                    throw new Error('Unexpected error occurred');
+                    setError('Unexpected error occurred');
                 }
             }
             return;
@@ -69,7 +67,9 @@ const NewPassword = () => {
                                    placeholder='Password'/>
                             <img src={vision} alt='vision' onClick={() => setRePassVisible(!rePassVisible)}/>
                         </div>
-                        <button type='submit' disabled={error}>Reset Password</button>
+                        {error && <p style={{color: 'red', margin: '5px', textAlign: 'center'}}>{error}</p>}
+
+                        <button type='submit'>Reset Password</button>
                     </form>
                 </div>
             </div>
